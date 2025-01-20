@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+}
+
+#app {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-nav {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: #646cff;
+  text-shadow: 0 0 10px rgba(100, 108, 255, 0.5);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.nav-button {
+  background: rgba(100, 108, 255, 0.1);
+  color: white;
+  border: 2px solid #646cff;
+  padding: 1rem 2rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: rgba(100, 108, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-button.active {
+  background: #646cff;
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.4);
+}
+
+.game-section {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-section.active {
+  display: flex;
+}
+
+.game-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.game-info, .memory-info, .puzzle-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+#gameCanvas {
+  border: 3px solid #646cff;
+  border-radius: 10px;
+  background-color: rgba(26, 26, 26, 0.9);
+  box-shadow: 0 0 20px rgba(100, 108, 255, 0.3);
+}
+
+.controls {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+#startButton, #memoryStartButton, #puzzleStartButton {
+  background: #646cff;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+#startButton:hover, #memoryStartButton:hover, #puzzleStartButton:hover {
+  background: #7c83ff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(100, 108, 255, 0.4);
+}
+
+#score, #high-score, #memoryMoves, #memoryPairs, #puzzleMoves {
+  background: rgba(100, 108, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid rgba(100, 108, 255, 0.3);
+}
+
+/* Memory Game Styles */
+#memoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  background: #646cff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.memory-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.4);
+}
+
+.memory-card.flipped {
+  transform: rotateY(180deg);
+  background: #7c83ff;
+}
+
+.memory-card.matched {
+  background: #4CAF50;
+  cursor: default;
+}
+
+.memory-card.matched:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Puzzle Game Styles */
+#puzzleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.puzzle-tile {
+  aspect-ratio: 1;
+  background: #646cff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.puzzle-tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.4);
+}
+
+.puzzle-tile.empty {
+  background: transparent;
+  border: 2px dashed rgba(100, 108, 255, 0.3);
+  cursor: default;
+}
+
+.puzzle-tile.empty:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.puzzle-tile.correct {
+  background: #4CAF50;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multigames</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <nav class="game-nav">
+      <h1>Multigames</h1>
+      <div class="nav-buttons">
+        <button id="snakeButton" class="nav-button active">Snake</button>
+        <button id="game2Button" class="nav-button">Memory</button>
+        <button id="game3Button" class="nav-button">Taquin</button>
+      </div>
+    </nav>
+
+    <div id="snakeGame" class="game-section active">
+      <div class="game-container">
+        <div class="game-info">
+          <div id="score">Score: 0</div>
+          <div id="high-score">Meilleur Score: 0</div>
+        </div>
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="controls">
+          <p>Utilisez les flèches du clavier pour jouer</p>
+          <button id="startButton">Nouvelle Partie</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="game2" class="game-section">
+      <div class="game-container">
+        <div class="memory-info">
+          <div id="memoryMoves">Coups: 0</div>
+          <div id="memoryPairs">Paires: 0/8</div>
+        </div>
+        <div id="memoryGrid"></div>
+        <div class="controls">
+          <button id="memoryStartButton">Nouvelle Partie</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="game3" class="game-section">
+      <div class="game-container">
+        <div class="puzzle-info">
+          <div id="puzzleMoves">Coups: 0</div>
+        </div>
+        <div id="puzzleGrid"></div>
+        <div class="controls">
+          <button id="puzzleStartButton">Nouvelle Partie</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
